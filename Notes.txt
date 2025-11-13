@@ -1,0 +1,29 @@
+backend/
+| - app/
+| | - __init__.py
+|
+Flask app factory
+| - models/
+| | - user.py
+
+How does JWT (JSON Web Token) function?
+A user logs in, sending a request to the server.
+The server generates a JWT token.
+
+The client side stores the token through localStorage
+or cookies.
+
+Every API request includes a token in the header.
+
+The server validates the token without database lookups
+because it is faster.
+
+Architecture:
+Layer 1: Client Layer (What Users See)
+Layer 2: API Layer (Request Handler)
+
+Use cases:
+CSV uploads: Process 10 000 rows without blocking
+PDF generation: Create monthly reports asynchronously
+Email notifications: Send portfolio alerts
+Scheduled jobs: Recalculate ESG scores daily
