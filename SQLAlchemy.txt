@@ -1,0 +1,7 @@
+SQLAlchmey is a Python ORM, or Object-relational mapper
+that allows us to interact with databases using Python
+rather than writing raw SQL.
+
+SQLAlchemy can be used to define models, perform queries,
+and handle relationships efficiently while keeping the
+database logic clean and Python.

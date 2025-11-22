@@ -1,4 +1,5 @@
 from app import db
+from werkzeug.security import generate_password_hash, check_password_hash
 from datetime import datetime
 
 '''
@@ -96,3 +97,26 @@ class User(db.Model):
     # the state of their investments?
     'weekly_summary': True
   })
+
+  def set_password(self, password):
+    """Hash and set password"""
+    self.password_hash = generate_password_hash(password)
+  
+  def check_password(self, password):
+    """Verify password"""
+    return check_password_hash(self.password_hash, password)
+
+  def to_dict(self):
+    """Convert user to dictionary"""
+    return {
+      'id': self.id,
+      'email_address': self.email_address,
+      'full_name': self.full_name,
+      'default_currency': self.default_currency,
+      'notifications_enabled': self.notifications_enabled,
+      'created_at': self.created_at.isoformat() if self.created_at else None,
+      'is_verified': self.is_verified
+    }
+
+  def __repr__(self):
+    return f'<User {self.email_address}'

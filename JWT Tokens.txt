@@ -1,0 +1,18 @@
+JWTs or JSON Web Tokens provide a way to securely transit
+information between a client and a server.
+
+JWT Flow:
+A user logs in with their credentials.
+
+The API receives the request and sends it to the server.
+
+The server generates a token containing the user ID.
+The server signs the token with a secret key so the client
+cannot tamper with it.
+
+The client stores the token usually in memory and sends it
+with each request in the Authorisation header.
+
+When the server receives future requests, before granting
+access it verifies the token's signature and checks whether
+it has expired.

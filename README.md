@@ -13,3 +13,9 @@ A SaaS-style fintech application that:
 3. Provide analytics and actionable insights.
 4. Suggest sustainable investment adjustments.
 5. Include notifications and predictive forecasts.
+
+SaaS is a cloud-based software delivery model in which providers
+host applications and make them available to users over the internet.
+
+SaaS users typically access applications by using a web browser
+or application.
