@@ -98,6 +98,13 @@ class User(db.Model):
     'weekly_summary': True
   })
 
+  # SQLAlchemy relationship.
+  # Related to the "Account" model.
+  # backref="user": this gives the Account model a 'user' attribute.
+  # lazy='dynamic': queries are not executed until explicitly requested.
+  # cascade='all, delete-orphan': deletes child records when the parent is deleted. 
+  accounts = db.relatonship('Account', backref='user', lazy='dyanmic', cascade='all, delete-orphan')
+
   def set_password(self, password):
     """Hash and set password"""
     self.password_hash = generate_password_hash(password)
